@@ -1,8 +1,12 @@
 # DB-Dump
-DB-Dump là công cụ dùng import và export database.
+DB-Dump is a tool used to import and export databases.
 
-Thiết lập các thông tin kết nối và xác thực yêu cầu trong file setup.php
-Gọi file unlock.php nhập thông tin xác thực key và lock.
-Gọi các chức năng:
-- import.php: import database trong setup.
-- info.php: xem danh sách các database, các bảng và export các database.
+# Setup
+Set up the required connection and authentication information in the setup.php file
+
+Call the unlock.php file to enter key and lock authentication information.
+
+# Use
+Call functions:
+- import.php: import database in setup.
+- info.php: view list of databases, tables and export databases.
