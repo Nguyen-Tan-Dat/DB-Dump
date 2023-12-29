@@ -1,6 +1,6 @@
-order deny,allow
-deny from all
-allow from 118.69.63.213
+#order deny,allow
+#deny from all
+#allow from 118.69.63.213
 Options -Indexes
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f

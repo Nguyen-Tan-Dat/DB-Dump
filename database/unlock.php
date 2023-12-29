@@ -11,64 +11,78 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Open the database tools lock</title>
+    <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq8Beo6DDvB7Riehrt0DuzuV8LPHtuqiRxDP7gjl68OHYq45nynpwrb01T46Qhf6xLatE&usqp=CAU">
     <style>
         body {
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            background: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
         }
 
         form {
-            width: 100%;
-            max-width: 450px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            background: #ccd3d9;
-            color: #3b82d2;
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
             border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        label, h1 {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-            width: 100%;
+        h1 {
+            text-align: center;
+            color: #343a40;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
         }
 
         input {
-            height: 30px;
             width: 100%;
-            margin: 5px 10px;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
 
         button {
-            height: 40px;
-            width: 100px;
-            background: #3b82d2;
-            color: #ccd3d9;
-            border-radius: 4px;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
             border: none;
-            margin: 5px 0 20px 0;
-            outline: none;
+            border-radius: 4px;
+            cursor: pointer;
         }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
     </style>
 </head>
 <body>
 
-<form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>"><h1>Open the database tools lock</h1>
-    <label for="lock">
-        <input type="password" name="lock" required placeholder="Enter Lock">
-    </label>
-    <label for="key">
-        <input type="password" name="key" required placeholder="Enter Key"></label>
-    <button type="submit">Unlock</button>
+<form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+
     <table style="width: 100%;padding: 4px 10px;">
         <tbody>
         <?php
@@ -79,6 +93,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ?>
         </tbody>
     </table>
+    <h1>Database tools unlock</h1>
+    <label for="lock">
+        <input type="password" name="lock" required placeholder="Enter Lock">
+    </label>
+    <label for="key">
+        <input type="password" name="key" required placeholder="Enter Key"></label>
+    <button type="submit">Unlock</button>
+
 </form>
 
 </body>

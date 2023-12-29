@@ -1,7 +1,7 @@
 <?php
 session_start();
-const KEY = "dat";
-const LOCK = "dat";
+const KEY = "KhwZJ8yR7HLqEGp";
+const LOCK = "uqTLnhXpsLeO8Mf";
 if (!(isset($_SESSION["LOCK"]) && isset($_SESSION["KEY"]) && $_SESSION["LOCK"] == LOCK && $_SESSION["KEY"] == KEY)) {
     header("Location: ../");
     die();
