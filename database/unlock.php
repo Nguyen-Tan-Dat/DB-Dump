@@ -5,13 +5,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION["KEY"] = $_POST["key"];
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Open the database tools lock</title>
-    <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq8Beo6DDvB7Riehrt0DuzuV8LPHtuqiRxDP7gjl68OHYq45nynpwrb01T46Qhf6xLatE&usqp=CAU">
+    <link rel="icon" type="image/png" href="/database/icon.png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -82,7 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-
     <table style="width: 100%;padding: 4px 10px;">
         <tbody>
         <?php
@@ -98,10 +96,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="password" name="lock" required placeholder="Enter Lock">
     </label>
     <label for="key">
-        <input type="password" name="key" required placeholder="Enter Key"></label>
+        <input type="password" name="key" required placeholder="Enter Key">
+    </label>
     <button type="submit">Unlock</button>
-
 </form>
-
 </body>
 </html>

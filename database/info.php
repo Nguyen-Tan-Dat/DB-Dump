@@ -1,5 +1,18 @@
 <?php
 include_once("setup.php");
+?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Database Server Information</title>
+    <link rel="icon" type="image/png" href="/database/icon.png">
+</head>
+<body>
+<?php
 $host = DB_HOST;
 $username = DB_USER;
 $password = DB_PASS;
@@ -11,11 +24,14 @@ if (isset($_POST["database"])) {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $tables = $pdo->query("SHOW TABLES")->fetchAll(PDO::FETCH_COLUMN);
         ?>
-        <h3><?php echo $databaseName?></h3>
-        <form method="post" action="export.php" style="width: 100%;max-width: 200px;display: flex;justify-content: space-between">
-            <a href="info.php" style="text-decoration: none;border: #3b82d2 1px solid; padding: 4px 10px;border-radius: 4px">Back</a>
+        <h3><?php echo $databaseName ?></h3>
+        <form method="post" action="export.php"
+              style="width: 100%;max-width: 200px;display: flex;justify-content: space-between">
+            <a href="info.php"
+               style="text-decoration: none;border: #3b82d2 1px solid; padding: 4px 10px;border-radius: 4px">Back</a>
             <input type="hidden" name="database" value="<?= $databaseName ?>">
-            <button type="submit" style="border: #3b82d2 1px solid; padding: 4px 10px;border-radius: 4px">Export</button>
+            <button type="submit" style="border: #3b82d2 1px solid; padding: 4px 10px;border-radius: 4px">Export
+            </button>
         </form>
         <?php
         echo "<ul>";
@@ -35,7 +51,7 @@ if (isset($_POST["database"])) {
         $result = $pdo->query("SELECT VERSION() as version");
         $row = $result->fetch();
         $mysqlVersion = $row["version"];
-        echo "<h2>MySQL version: " . $mysqlVersion."</h2>";
+        echo "<h2>MySQL version: " . $mysqlVersion . "</h2>";
         foreach ($databases as $db) { ?>
             <form method="post">
                 <input type="hidden" name="database" value="<?= $db ?>">
@@ -47,3 +63,6 @@ if (isset($_POST["database"])) {
         die("Error: " . $e->getMessage());
     }
 }
+?>
+</body>
+</html>
