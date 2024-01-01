@@ -1,4 +1,5 @@
 # Database dump
+
 Database dump is a tool to import and export MySQL databases on a PHP server.
 
 # Setup
