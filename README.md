@@ -3,6 +3,7 @@
 Database dump is a tool to import and export MySQL databases on a PHP server.
 
 # Setup
+
 Set up the required connection and authentication information in the setup.php file
 - KEY and LOCK are protection tools.
 - DB_HOST, DB_USER, DB_PASS, DB_NAME are connect database information. 
