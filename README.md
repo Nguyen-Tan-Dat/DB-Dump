@@ -10,6 +10,7 @@ Set up the required connection and authentication information in the setup.php f
 Call the unlock.php file to enter the key and lock authentication information.
 
 # Use
+
 Call functions:
 - import.php: import database in setup.
 + clear.sql: is a clear database script, that uses delete all tables.
